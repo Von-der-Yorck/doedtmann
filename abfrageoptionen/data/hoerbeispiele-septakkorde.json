@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "name": "C7",
+        "toene": ["C", "E", "G", "Bb"],
+        "umkehrung": "Grundstellung",
+        "typ": "Dur",
+        "intervall": "kleine Septime",
+        "audio": "audio/C7.m4a"
+    }
+]

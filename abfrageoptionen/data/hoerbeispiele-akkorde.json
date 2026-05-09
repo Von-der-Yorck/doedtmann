@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "C-Dur",
+        "toene": ["C", "E", "G"],
+        "umkehrung": "Grundstellung",
+        "typ": "Dur",
+        "audio": "audio/C-Dur.m4a"
+    },
+    {
+        "id": 2,
+        "name": "a-Moll",
+        "toene": ["A", "C", "E"],
+        "umkehrung": "Grundstellung",
+        "typ": "Moll",
+        "audio": "audio/a-Moll.m4a"
+    }
+]

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gehörbildung</title>
+</head>
+<body>
+    <header>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu" hidden>
+            <a href="abfrageoptionen/septakkorde.html">Septakkorde</a>
+            <a href="abfrageoptionen/akkorde.html">Akkorde</a>
+            <a href="abfrageoptionen/xxx.html">xxx</a>
+        </div>
+        <h1>Gehörbildung</h1>
+        <div class="login-panel" id="loginPanel">
+            <div class="login-inputs">
+                <label id="usernameLabel" for="usernameInput">Name:</label>
+                <input id="usernameInput" type="text" placeholder="Dein Name">
+                <button id="loginButton" type="button">Einloggen</button>
+                <button id="logoutButton" type="button" hidden>Ausloggen</button>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        const STORAGE_KEY = "hoerbeispieleUserData";
+
+        function loadUserData() {
+            const stored = localStorage.getItem(STORAGE_KEY);
+            if (!stored) {
+                return { users: {}, currentUser: null };
+            }
+            try {
+                return JSON.parse(stored);
+            } catch {
+                return { users: {}, currentUser: null };
+            }
+        }
+
+        function saveUserData(data) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        }
+
+        function updateUserUI(name) {
+            const usernameLabel = document.getElementById("usernameLabel");
+            const usernameInput = document.getElementById("usernameInput");
+            const loginButton = document.getElementById("loginButton");
+            const logoutButton = document.getElementById("logoutButton");
+
+            if (name) {
+                usernameLabel.textContent = name;
+                usernameInput.hidden = true;
+                loginButton.hidden = true;
+                logoutButton.hidden = false;
+            } else {
+                usernameLabel.textContent = "Name:";
+                usernameInput.hidden = false;
+                loginButton.hidden = false;
+                logoutButton.hidden = true;
+            }
+        }
+
+        function logoutUser(userData) {
+            if (userData) {
+                userData.currentUser = null;
+                saveUserData(userData);
+            }
+            updateUserUI(null);
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById("dropdownMenu");
+            menu.hidden = !menu.hidden;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const loginButton = document.getElementById("loginButton");
+            const logoutButton = document.getElementById("logoutButton");
+            const usernameInput = document.getElementById("usernameInput");
+            const userData = loadUserData();
+
+            if (userData.currentUser) {
+                updateUserUI(userData.currentUser);
+            }
+
+            if (loginButton) {
+                loginButton.addEventListener("click", () => {
+                    const name = usernameInput.value.trim();
+                    if (!name) {
+                        return;
+                    }
+                    if (!userData.users[name]) {
+                        userData.users[name] = { correct: 0, wrong: 0 };
+                    }
+                    userData.currentUser = name;
+                    saveUserData(userData);
+                    updateUserUI(name);
+                    usernameInput.value = "";
+                });
+            }
+
+            if (logoutButton) {
+                logoutButton.addEventListener("click", () => {
+                    logoutUser(userData);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

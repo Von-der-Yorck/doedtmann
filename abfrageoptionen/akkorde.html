@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Akkorde</title>
+</head>
+<body>
+
+    <div class="return-button">
+        <a href="../index.html">&#8592; Zurück</a>
+    </div>
+
+    <div class="popup-overlay" id="loginPopup" hidden>
+        <div class="popup-content">
+            <h2>Anmeldung erforderlich</h2>
+            <p>Um die Übung zu starten und deinen Fortschritt zu speichern, musst du dich mit einem Namen anmelden.</p>
+            <div class="login-inputs">
+                <input id="popupUsernameInput" type="text" placeholder="Dein Name">
+                <button id="popupLoginButton" type="button">Einloggen</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="result-progress-container">
+        <div class="result-progress">
+            <div class="result-progress__fill result-progress__fill--correct" id="correctProgress"></div>
+            <div class="result-progress__fill result-progress__fill--wrong" id="wrongProgress"></div>
+        </div>
+        <div class="result-progress__text">
+            <span id="correctCount">Richtig: 0 (0%)</span>
+            <span id="wrongCount">Falsch: 0 (0%)</span>
+        </div>
+    </div>
+    <h1>Akkorde</h1>
+    <div id="audioPlayer"></div>
+
+    <h3>Typ</h3>
+    <div id="auswahl-typ" class="option-group"></div>
+
+    <h3>Umkehrung</h3>
+    <div id="auswahl-umkehrung" class="option-group"></div>
+
+    <button id="checkButton">Antwort überprüfen</button>
+    <button id="nextButton" hidden>Neues Beispiel</button>
+    <div id="feedback" class="feedback"></div>
+
+    <script src="zufaelligesHoerbeispiel.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            zufaelligesHoerbeispiel("hoerbeispiele-akkorde.json");
+        });
+    </script>
+</body>
+</html>
