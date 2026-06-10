@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Testergebnisse</title>
+</head>
+<body>
+    <div class="return-button">
+        <a href="../index.html">&#8592; Zurück</a>
+    </div>
+
+    <div class="section-card">
+        <h1>Ergebnisse Tests</h1>
+        <p>Hier findest du eine tabellarische Übersicht deiner bisherigen Testergebnisse.</p>
+    </div>
+
+    <div class="results-login" id="resultsLogin">
+        <div class="login-inputs">
+            <input id="resultsUsernameInput" type="text" placeholder="Dein Name">
+            <button id="resultsLoginButton" type="button">Anmelden</button>
+        </div>
+    </div>
+
+    <div id="resultsContent" hidden>
+        <div class="results-user" id="resultsUserLabel"></div>
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th>Datum / Uhrzeit</th>
+                    <th>Anzahl Hörbeispiele</th>
+                    <th>Gesamt richtig (%)</th>
+                    <th>Akkorde (%)</th>
+                    <th>Septakkorde (%)</th>
+                </tr>
+            </thead>
+            <tbody id="resultsTableBody"></tbody>
+        </table>
+        <div id="noResultsMessage" class="feedback"></div>
+    </div>
+
+    <script src="testergebnisse.js"></script>
+</body>
+</html>

@@ -1,0 +1,1217 @@
+[
+    {
+        "id": 1,
+        "name": "C",
+        "typ": "Dur",
+        "ton": "C",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-C-x-C-1.m4a"
+    },
+    {
+        "id": 2,
+        "name": "C",
+        "typ": "Dur",
+        "ton": "C",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-C-x-C-2.m4a"
+    },
+    {
+        "id": 3,
+        "name": "C",
+        "typ": "Dur",
+        "ton": "C",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-C-x-C-G.m4a"
+    },
+    {
+        "id": 4,
+        "name": "C",
+        "typ": "Dur",
+        "ton": "E",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-C-x-E-1.m4a"
+    },
+    {
+        "id": 5,
+        "name": "C",
+        "typ": "Dur",
+        "ton": "E",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-C-x-E-2.m4a"
+    },
+    {
+        "id": 6,
+        "name": "C",
+        "typ": "Dur",
+        "ton": "E",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-C-x-E-G.m4a"
+    },
+    {
+        "id": 7,
+        "name": "C",
+        "typ": "Dur",
+        "ton": "G",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-C-x-G-1.m4a"
+    },
+    {
+        "id": 8,
+        "name": "C",
+        "typ": "Dur",
+        "ton": "G",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-C-x-G-2.m4a"
+    },
+    {
+        "id": 9,
+        "name": "C",
+        "typ": "Dur",
+        "ton": "G",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-C-x-G-G.m4a"
+    },
+    {
+        "id": 10,
+        "name": "CIS",
+        "typ": "Dur",
+        "ton": "CIS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-CIS-x-CIS-1.m4a"
+    },
+    {
+        "id": 11,
+        "name": "CIS",
+        "typ": "Dur",
+        "ton": "CIS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-CIS-x-CIS-2.m4a"
+    },
+    {
+        "id": 12,
+        "name": "CIS",
+        "typ": "Dur",
+        "ton": "CIS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-CIS-x-CIS-G.m4a"
+    },
+    {
+        "id": 13,
+        "name": "CIS",
+        "typ": "Dur",
+        "ton": "F",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-CIS-x-F-1.m4a"
+    },
+    {
+        "id": 14,
+        "name": "CIS",
+        "typ": "Dur",
+        "ton": "F",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-CIS-x-F-2.m4a"
+    },
+    {
+        "id": 15,
+        "name": "CIS",
+        "typ": "Dur",
+        "ton": "F",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-CIS-x-F-G.m4a"
+    },
+    {
+        "id": 16,
+        "name": "CIS",
+        "typ": "Dur",
+        "ton": "GIS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-CIS-x-GIS-1.m4a"
+    },
+    {
+        "id": 17,
+        "name": "CIS",
+        "typ": "Dur",
+        "ton": "GIS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-CIS-x-GIS-2.m4a"
+    },
+    {
+        "id": 18,
+        "name": "CIS",
+        "typ": "Dur",
+        "ton": "GIS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-CIS-x-GIS-G.m4a"
+    },
+    {
+        "id": 19,
+        "name": "D",
+        "typ": "Dur",
+        "ton": "A",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-D-x-A-1.m4a"
+    },
+    {
+        "id": 20,
+        "name": "D",
+        "typ": "Dur",
+        "ton": "A",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-D-x-A-2.m4a"
+    },
+    {
+        "id": 21,
+        "name": "D",
+        "typ": "Dur",
+        "ton": "A",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-D-x-A-G.m4a"
+    },
+    {
+        "id": 22,
+        "name": "D",
+        "typ": "Dur",
+        "ton": "D",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-D-x-D-1.m4a"
+    },
+    {
+        "id": 23,
+        "name": "D",
+        "typ": "Dur",
+        "ton": "D",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-D-x-D-2.m4a"
+    },
+    {
+        "id": 24,
+        "name": "D",
+        "typ": "Dur",
+        "ton": "D",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-D-x-D-G.m4a"
+    },
+    {
+        "id": 25,
+        "name": "D",
+        "typ": "Dur",
+        "ton": "FIS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-D-x-FIS-1.m4a"
+    },
+    {
+        "id": 26,
+        "name": "D",
+        "typ": "Dur",
+        "ton": "FIS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-D-x-FIS-2.m4a"
+    },
+    {
+        "id": 27,
+        "name": "D",
+        "typ": "Dur",
+        "ton": "FIS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-D-x-FIS-G.m4a"
+    },
+    {
+        "id": 28,
+        "name": "DIS",
+        "typ": "Dur",
+        "ton": "AIS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-DIS-x-AIS-1.m4a"
+    },
+    {
+        "id": 29,
+        "name": "DIS",
+        "typ": "Dur",
+        "ton": "AIS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-DIS-x-AIS-2.m4a"
+    },
+    {
+        "id": 30,
+        "name": "DIS",
+        "typ": "Dur",
+        "ton": "AIS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-DIS-x-AIS-G.m4a"
+    },
+    {
+        "id": 31,
+        "name": "DIS",
+        "typ": "Dur",
+        "ton": "DIS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-DIS-x-DIS-1.m4a"
+    },
+    {
+        "id": 32,
+        "name": "DIS",
+        "typ": "Dur",
+        "ton": "DIS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-DIS-x-DIS-2.m4a"
+    },
+    {
+        "id": 33,
+        "name": "DIS",
+        "typ": "Dur",
+        "ton": "DIS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-DIS-x-DIS-G.m4a"
+    },
+    {
+        "id": 34,
+        "name": "DIS",
+        "typ": "Dur",
+        "ton": "FISIS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-DIS-x-FISIS-1.m4a"
+    },
+    {
+        "id": 35,
+        "name": "DIS",
+        "typ": "Dur",
+        "ton": "FISIS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-DIS-x-FISIS-2.m4a"
+    },
+    {
+        "id": 36,
+        "name": "DIS",
+        "typ": "Dur",
+        "ton": "FISIS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-DIS-x-FISIS-G.m4a"
+    },
+    {
+        "id": 37,
+        "name": "E",
+        "typ": "Dur",
+        "ton": "E",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-E-x-E-1.m4a"
+    },
+    {
+        "id": 38,
+        "name": "E",
+        "typ": "Dur",
+        "ton": "E",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-E-x-E-2.m4a"
+    },
+    {
+        "id": 39,
+        "name": "E",
+        "typ": "Dur",
+        "ton": "E",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-E-x-E-G.m4a"
+    },
+    {
+        "id": 40,
+        "name": "E",
+        "typ": "Dur",
+        "ton": "GIS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-E-x-GIS-1.m4a"
+    },
+    {
+        "id": 41,
+        "name": "E",
+        "typ": "Dur",
+        "ton": "GIS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-E-x-GIS-2.m4a"
+    },
+    {
+        "id": 42,
+        "name": "E",
+        "typ": "Dur",
+        "ton": "GIS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-E-x-GIS-G.m4a"
+    },
+    {
+        "id": 43,
+        "name": "E",
+        "typ": "Dur",
+        "ton": "H",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-E-x-H-1.m4a"
+    },
+    {
+        "id": 44,
+        "name": "E",
+        "typ": "Dur",
+        "ton": "H",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-E-x-H-2.m4a"
+    },
+    {
+        "id": 45,
+        "name": "E",
+        "typ": "Dur",
+        "ton": "H",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-E-x-H-G.m4a"
+    },
+    {
+        "id": 46,
+        "name": "F",
+        "typ": "Dur",
+        "ton": "A",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-F-x-A-1.m4a"
+    },
+    {
+        "id": 47,
+        "name": "F",
+        "typ": "Dur",
+        "ton": "A",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-F-x-A-2.m4a"
+    },
+    {
+        "id": 48,
+        "name": "F",
+        "typ": "Dur",
+        "ton": "A",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-F-x-A-G.m4a"
+    },
+    {
+        "id": 49,
+        "name": "F",
+        "typ": "Dur",
+        "ton": "C",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-F-x-C-1.m4a"
+    },
+    {
+        "id": 50,
+        "name": "F",
+        "typ": "Dur",
+        "ton": "C",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-F-x-C-2.m4a"
+    },
+    {
+        "id": 51,
+        "name": "F",
+        "typ": "Dur",
+        "ton": "C",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-F-x-C-G.m4a"
+    },
+    {
+        "id": 52,
+        "name": "F",
+        "typ": "Dur",
+        "ton": "F",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-F-x-F-1.m4a"
+    },
+    {
+        "id": 53,
+        "name": "F",
+        "typ": "Dur",
+        "ton": "F",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-F-x-F-2.m4a"
+    },
+    {
+        "id": 54,
+        "name": "F",
+        "typ": "Dur",
+        "ton": "F",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-F-x-F-G.m4a"
+    },
+    {
+        "id": 55,
+        "name": "FIS",
+        "typ": "Dur",
+        "ton": "AIS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-FIS-x-AIS-1.m4a"
+    },
+    {
+        "id": 56,
+        "name": "FIS",
+        "typ": "Dur",
+        "ton": "AIS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-FIS-x-AIS-2.m4a"
+    },
+    {
+        "id": 57,
+        "name": "FIS",
+        "typ": "Dur",
+        "ton": "AIS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-FIS-x-AIS-G.m4a"
+    },
+    {
+        "id": 58,
+        "name": "FIS",
+        "typ": "Dur",
+        "ton": "CIS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-FIS-x-CIS-1.m4a"
+    },
+    {
+        "id": 59,
+        "name": "FIS",
+        "typ": "Dur",
+        "ton": "CIS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-FIS-x-CIS-2.m4a"
+    },
+    {
+        "id": 60,
+        "name": "FIS",
+        "typ": "Dur",
+        "ton": "CIS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-FIS-x-CIS-G.m4a"
+    },
+    {
+        "id": 61,
+        "name": "FIS",
+        "typ": "Dur",
+        "ton": "FIS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-FIS-x-FIS-1.m4a"
+    },
+    {
+        "id": 62,
+        "name": "FIS",
+        "typ": "Dur",
+        "ton": "FIS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-FIS-x-FIS-2.m4a"
+    },
+    {
+        "id": 63,
+        "name": "FIS",
+        "typ": "Dur",
+        "ton": "FIS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-FIS-x-FIS-G.m4a"
+    },
+    {
+        "id": 64,
+        "name": "G",
+        "typ": "Dur",
+        "ton": "D",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-G-x-D-1.m4a"
+    },
+    {
+        "id": 65,
+        "name": "G",
+        "typ": "Dur",
+        "ton": "D",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-G-x-D-2.m4a"
+    },
+    {
+        "id": 66,
+        "name": "G",
+        "typ": "Dur",
+        "ton": "D",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-G-x-D-G.m4a"
+    },
+    {
+        "id": 67,
+        "name": "G",
+        "typ": "Dur",
+        "ton": "G",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-G-x-G-1.m4a"
+    },
+    {
+        "id": 68,
+        "name": "G",
+        "typ": "Dur",
+        "ton": "G",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-G-x-G-2.m4a"
+    },
+    {
+        "id": 69,
+        "name": "G",
+        "typ": "Dur",
+        "ton": "G",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-G-x-G-G.m4a"
+    },
+    {
+        "id": 70,
+        "name": "G",
+        "typ": "Dur",
+        "ton": "H",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-G-x-H-1.m4a"
+    },
+    {
+        "id": 71,
+        "name": "G",
+        "typ": "Dur",
+        "ton": "H",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-G-x-H-2.m4a"
+    },
+    {
+        "id": 72,
+        "name": "G",
+        "typ": "Dur",
+        "ton": "H",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-G-x-H-G.m4a"
+    },
+    {
+        "id": 73,
+        "name": "c",
+        "typ": "Moll",
+        "ton": "C",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-c-x-C-1.m4a"
+    },
+    {
+        "id": 74,
+        "name": "c",
+        "typ": "Moll",
+        "ton": "C",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-c-x-C-2.m4a"
+    },
+    {
+        "id": 75,
+        "name": "c",
+        "typ": "Moll",
+        "ton": "C",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-c-x-C-G.m4a"
+    },
+    {
+        "id": 76,
+        "name": "c",
+        "typ": "Moll",
+        "ton": "ES",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-c-x-ES-1.m4a"
+    },
+    {
+        "id": 77,
+        "name": "c",
+        "typ": "Moll",
+        "ton": "ES",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-c-x-ES-2.m4a"
+    },
+    {
+        "id": 78,
+        "name": "c",
+        "typ": "Moll",
+        "ton": "ES",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-c-x-ES-G.m4a"
+    },
+    {
+        "id": 79,
+        "name": "c",
+        "typ": "Moll",
+        "ton": "G",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-c-x-G-1.m4a"
+    },
+    {
+        "id": 80,
+        "name": "c",
+        "typ": "Moll",
+        "ton": "G",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-c-x-G-2.m4a"
+    },
+    {
+        "id": 81,
+        "name": "c",
+        "typ": "Moll",
+        "ton": "G",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-c-x-G-G.m4a"
+    },
+    {
+        "id": 82,
+        "name": "cis",
+        "typ": "Moll",
+        "ton": "CIS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-cis-x-CIS-1.m4a"
+    },
+    {
+        "id": 83,
+        "name": "cis",
+        "typ": "Moll",
+        "ton": "CIS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-cis-x-CIS-2.m4a"
+    },
+    {
+        "id": 84,
+        "name": "cis",
+        "typ": "Moll",
+        "ton": "CIS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-cis-x-CIS-G.m4a"
+    },
+    {
+        "id": 85,
+        "name": "cis",
+        "typ": "Moll",
+        "ton": "E",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-cis-x-E-1.m4a"
+    },
+    {
+        "id": 86,
+        "name": "cis",
+        "typ": "Moll",
+        "ton": "E",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-cis-x-E-2.m4a"
+    },
+    {
+        "id": 87,
+        "name": "cis",
+        "typ": "Moll",
+        "ton": "E",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-cis-x-E-G.m4a"
+    },
+    {
+        "id": 88,
+        "name": "cis",
+        "typ": "Moll",
+        "ton": "GIS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-cis-x-GIS-1.m4a"
+    },
+    {
+        "id": 89,
+        "name": "cis",
+        "typ": "Moll",
+        "ton": "GIS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-cis-x-GIS-2.m4a"
+    },
+    {
+        "id": 90,
+        "name": "cis",
+        "typ": "Moll",
+        "ton": "GIS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-cis-x-GIS-G.m4a"
+    },
+    {
+        "id": 91,
+        "name": "d",
+        "typ": "Moll",
+        "ton": "A",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-d-x-A-1.m4a"
+    },
+    {
+        "id": 92,
+        "name": "d",
+        "typ": "Moll",
+        "ton": "A",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-d-x-A-2.m4a"
+    },
+    {
+        "id": 93,
+        "name": "d",
+        "typ": "Moll",
+        "ton": "A",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-d-x-A-G.m4a"
+    },
+    {
+        "id": 94,
+        "name": "d",
+        "typ": "Moll",
+        "ton": "D",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-d-x-D-1.m4a"
+    },
+    {
+        "id": 95,
+        "name": "d",
+        "typ": "Moll",
+        "ton": "D",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-d-x-D-2.m4a"
+    },
+    {
+        "id": 96,
+        "name": "d",
+        "typ": "Moll",
+        "ton": "D",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-d-x-D-G.m4a"
+    },
+    {
+        "id": 97,
+        "name": "d",
+        "typ": "Moll",
+        "ton": "F",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-d-x-F-1.m4a"
+    },
+    {
+        "id": 98,
+        "name": "d",
+        "typ": "Moll",
+        "ton": "F",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-d-x-F-2.m4a"
+    },
+    {
+        "id": 99,
+        "name": "d",
+        "typ": "Moll",
+        "ton": "F",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-d-x-F-G.m4a"
+    },
+    {
+        "id": 100,
+        "name": "dis",
+        "typ": "Moll",
+        "ton": "AIS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-dis-x-AIS-1.m4a"
+    },
+    {
+        "id": 101,
+        "name": "dis",
+        "typ": "Moll",
+        "ton": "AIS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-dis-x-AIS-2.m4a"
+    },
+    {
+        "id": 102,
+        "name": "dis",
+        "typ": "Moll",
+        "ton": "AIS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-dis-x-AIS-G.m4a"
+    },
+    {
+        "id": 103,
+        "name": "dis",
+        "typ": "Moll",
+        "ton": "DIS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-dis-x-DIS-1.m4a"
+    },
+    {
+        "id": 104,
+        "name": "dis",
+        "typ": "Moll",
+        "ton": "DIS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-dis-x-DIS-2.m4a"
+    },
+    {
+        "id": 105,
+        "name": "dis",
+        "typ": "Moll",
+        "ton": "DIS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-dis-x-DIS-G.m4a"
+    },
+    {
+        "id": 106,
+        "name": "dis",
+        "typ": "Moll",
+        "ton": "FIS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-dis-x-FIS-1.m4a"
+    },
+    {
+        "id": 107,
+        "name": "dis",
+        "typ": "Moll",
+        "ton": "FIS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-dis-x-FIS-2.m4a"
+    },
+    {
+        "id": 108,
+        "name": "dis",
+        "typ": "Moll",
+        "ton": "FIS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-dis-x-FIS-G.m4a"
+    },
+    {
+        "id": 109,
+        "name": "e",
+        "typ": "Moll",
+        "ton": "E",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-e-x-E-1.m4a"
+    },
+    {
+        "id": 110,
+        "name": "e",
+        "typ": "Moll",
+        "ton": "E",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-e-x-E-2.m4a"
+    },
+    {
+        "id": 111,
+        "name": "e",
+        "typ": "Moll",
+        "ton": "E",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-e-x-E-G.m4a"
+    },
+    {
+        "id": 112,
+        "name": "e",
+        "typ": "Moll",
+        "ton": "G",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-e-x-G-1.m4a"
+    },
+    {
+        "id": 113,
+        "name": "e",
+        "typ": "Moll",
+        "ton": "G",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-e-x-G-2.m4a"
+    },
+    {
+        "id": 114,
+        "name": "e",
+        "typ": "Moll",
+        "ton": "G",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-e-x-G-G.m4a"
+    },
+    {
+        "id": 115,
+        "name": "e",
+        "typ": "Moll",
+        "ton": "H",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-e-x-H-1.m4a"
+    },
+    {
+        "id": 116,
+        "name": "e",
+        "typ": "Moll",
+        "ton": "H",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-e-x-H-2.m4a"
+    },
+    {
+        "id": 117,
+        "name": "e",
+        "typ": "Moll",
+        "ton": "H",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-e-x-H-G.m4a"
+    },
+    {
+        "id": 118,
+        "name": "f",
+        "typ": "Moll",
+        "ton": "AS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-f-x-AS-1.m4a"
+    },
+    {
+        "id": 119,
+        "name": "f",
+        "typ": "Moll",
+        "ton": "AS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-f-x-AS-2.m4a"
+    },
+    {
+        "id": 120,
+        "name": "f",
+        "typ": "Moll",
+        "ton": "AS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-f-x-AS-G.m4a"
+    },
+    {
+        "id": 121,
+        "name": "f",
+        "typ": "Moll",
+        "ton": "C",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-f-x-C-1.m4a"
+    },
+    {
+        "id": 122,
+        "name": "f",
+        "typ": "Moll",
+        "ton": "C",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-f-x-C-2.m4a"
+    },
+    {
+        "id": 123,
+        "name": "f",
+        "typ": "Moll",
+        "ton": "C",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-f-x-C-G.m4a"
+    },
+    {
+        "id": 124,
+        "name": "f",
+        "typ": "Moll",
+        "ton": "F",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-f-x-F-1.m4a"
+    },
+    {
+        "id": 125,
+        "name": "f",
+        "typ": "Moll",
+        "ton": "F",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-f-x-F-2.m4a"
+    },
+    {
+        "id": 126,
+        "name": "f",
+        "typ": "Moll",
+        "ton": "F",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-f-x-F-G.m4a"
+    },
+    {
+        "id": 127,
+        "name": "fis",
+        "typ": "Moll",
+        "ton": "A",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-fis-x-A-1.m4a"
+    },
+    {
+        "id": 128,
+        "name": "fis",
+        "typ": "Moll",
+        "ton": "A",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-fis-x-A-2.m4a"
+    },
+    {
+        "id": 129,
+        "name": "fis",
+        "typ": "Moll",
+        "ton": "A",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-fis-x-A-G.m4a"
+    },
+    {
+        "id": 130,
+        "name": "fis",
+        "typ": "Moll",
+        "ton": "CIS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-fis-x-CIS-1.m4a"
+    },
+    {
+        "id": 131,
+        "name": "fis",
+        "typ": "Moll",
+        "ton": "CIS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-fis-x-CIS-2.m4a"
+    },
+    {
+        "id": 132,
+        "name": "fis",
+        "typ": "Moll",
+        "ton": "CIS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-fis-x-CIS-G.m4a"
+    },
+    {
+        "id": 133,
+        "name": "fis",
+        "typ": "Moll",
+        "ton": "FIS",
+        "umkehrung": "1. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-fis-x-FIS-1.m4a"
+    },
+    {
+        "id": 134,
+        "name": "fis",
+        "typ": "Moll",
+        "ton": "FIS",
+        "umkehrung": "2. Umkehrung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-fis-x-FIS-2.m4a"
+    },
+    {
+        "id": 135,
+        "name": "fis",
+        "typ": "Moll",
+        "ton": "FIS",
+        "umkehrung": "Grundstellung",
+        "intervall": "keine Septime",
+        "audio": "audio/ABMG-fis-x-FIS-G.m4a"
+    }
+]

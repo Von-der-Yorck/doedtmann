@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Test</title>
+</head>
+<body>
+    <div class="return-button">
+        <a href="../index.html">&#8592; Zurück</a>
+    </div>
+
+    <div class="section-card">
+        <h1>Test</h1>
+        <p>Erstelle einen Test und wähle aus, aus welchen Übungsbereichen und wie viele Hörbeispiele er bestehen soll. Nach dem Start kannst du den Test jederzeit mit dem roten Knopf rechts unten beenden.</p>
+        <button id="openConfigButton" type="button">Test konfigurieren</button>
+    </div>
+
+    <div id="testArea" hidden>
+        <div class="test-header">
+            <span id="questionProgress">Frage 0 von 0</span>
+            <span id="scoreSummary">0 richtig / 0 beantwortet</span>
+        </div>
+
+        <div id="audioPlayer"></div>
+        <div id="questionFields"></div>
+
+        <div class="button-row">
+            <button id="checkButton">Antwort überprüfen</button>
+            <button id="nextButton" hidden>Weiter</button>
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+    </div>
+
+    <div id="completionSummary" class="completion-summary" hidden></div>
+
+    <button id="stopButton" class="fixed-stop-button hidden" type="button">Test beenden</button>
+
+    <div class="popup-overlay" id="configPopup" hidden>
+        <div class="popup-content test-config">
+            <h2>Test konfigurieren</h2>
+            <p>Wähle aus, aus welchen Übungsbereichen und wie viele Hörbeispiele der Test enthalten soll.</p>
+
+            <div class="section-card">
+                <h3>Übungsbereich</h3>
+                <div class="option-grid">
+                    <label class="option-checkbox"><input id="datasetAkkorde" type="checkbox" checked> Akkorde</label>
+                    <label class="option-checkbox"><input id="datasetSeptakkorde" type="checkbox" checked> Septakkorde</label>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3>Anzahl der Hörbeispiele</h3>
+                <div class="option-grid">
+                    <label class="option-radio"><input name="count" type="radio" value="5" checked> 5</label>
+                    <label class="option-radio"><input name="count" type="radio" value="10"> 10</label>
+                    <label class="option-radio"><input name="count" type="radio" value="15"> 15</label>
+                    <label class="option-radio"><input name="count" type="radio" value="20"> 20</label>
+                    <label class="option-radio"><input name="count" type="radio" value="25"> 25</label>
+                    <label class="option-radio"><input name="count" type="radio" value="30"> 30</label>
+                </div>
+            </div>
+
+            <div class="popup-actions">
+                <button id="startTestButton" type="button">Test starten</button>
+                <button id="closeConfigButton" type="button">Abbrechen</button>
+            </div>
+
+            <div id="configError" class="feedback wrong"></div>
+
+            <div class="section-card" id="loginSection">
+                <h3>Anmeldung</h3>
+                <p>Bitte melde dich an, damit deine Ergebnisse gespeichert werden können.</p>
+                <div class="login-inputs">
+                    <input id="configUsernameInput" type="text" placeholder="Dein Name">
+                    <button id="configLoginButton" type="button">Einloggen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="test.js"></script>
+</body>
+</html>

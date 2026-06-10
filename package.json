@@ -1,0 +1,11 @@
+{
+  "name": "gehoerbildung",
+  "version": "1.0.0",
+  "description": "Gehörbildungs-Trainingswebseite",
+  "scripts": {
+    "sync-audio": "node scripts/syncAudioToJson.js"
+  },
+  "keywords": ["gehoerbildung", "musiktraining"],
+  "author": "",
+  "license": "MIT"
+}
