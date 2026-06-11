@@ -1,6 +1,14 @@
 let currentHoerbeispiel = null;
 let currentDataFile = null;
+const NOTE_OPTIONS = [
+    "C", "CIS", "D", "DIS", "E", "F", "FIS", "G", "GIS", "A", "AIS", "H",
+    "c", "cis", "d", "dis", "e", "f", "fis", "g", "gis", "a", "ais", "h"
+];
+const AKKORDART_OPTIONS = [...NOTE_OPTIONS];
+
 let currentSelection = {
+    ton: null,
+    name: null,
     type: null,
     umkehrung: null,
     intervall: null
@@ -65,13 +73,6 @@ function updateUserUI() {
     }
 }
 
-function closeLoginPopup() {
-    const popup = document.getElementById("loginPopup");
-    if (popup) {
-        popup.hidden = true;
-    }
-}
-
 function showLoginPopupOnce() {
     if (currentUserName) {
         return;
@@ -84,15 +85,6 @@ function showLoginPopupOnce() {
     if (popup) {
         popup.hidden = false;
         sessionStorage.setItem("hoerbeispieleLoginReminderShown", "true");
-    }
-}
-
-function initUser() {
-    loadUserData();
-    if (userData.currentUser) {
-        setUser(userData.currentUser);
-    } else {
-        updateUserUI();
     }
 }
 
@@ -109,7 +101,7 @@ function zufaelligesHoerbeispiel(datei) {
             <source src="data/${currentHoerbeispiel.audio}" type="audio/mp4">
         </audio>
         `;
-            currentSelection = { type: null, umkehrung: null, intervall: null };
+            currentSelection = { ton: null, name: null, type: null, umkehrung: null, intervall: null };
             zeigeAntworten(currentHoerbeispiel);
             resetFeedback();
         })
@@ -138,16 +130,33 @@ function resetFeedback() {
 }
 
 function zeigeAntworten(randomHoerbeispiel) {
+    if (randomHoerbeispiel.ton) {
+        renderFixedValue("auswahl-ton", `Ton: ${randomHoerbeispiel.ton}`);
+        currentSelection.ton = randomHoerbeispiel.ton;
+    }
+    if (randomHoerbeispiel.name) {
+        renderTextInput("auswahl-name", "Akkordart eingeben (Groß-/Kleinschreibung egal)", "name");
+    }
+
     renderOptionButtons("auswahl-typ", ["Dur", "Moll", "vermindert", "übermäßig"], "type");
 
-    const umkehrungen = randomHoerbeispiel.intervall
-        ? ["Grundstellung", "Quintsextakkord", "Terzquartakkord", "Sekundakkord"]
-        : ["Grundstellung", "Sextakkord", "Quartsextakkord"];
+    let umkehrungen;
+    if (randomHoerbeispiel.ton) {
+        umkehrungen = ["Grundstellung", "1. Umkehrung", "2. Umkehrung", "3. Umkehrung"];
+    } else if (randomHoerbeispiel.intervall) {
+        umkehrungen = ["Grundstellung", "Quintsextakkord", "Terzquartakkord", "Sekundakkord"];
+    } else {
+        umkehrungen = ["Grundstellung", "Sextakkord", "Quartsextakkord"];
+    }
     renderOptionButtons("auswahl-umkehrung", umkehrungen, "umkehrung");
 
     const intervallContainer = document.getElementById("auswahl-intervall");
     if (intervallContainer) {
-        renderOptionButtons("auswahl-intervall", ["kleine Septime", "große Septime"], "intervall");
+        if (randomHoerbeispiel.ton) {
+            renderOptionButtons("auswahl-intervall", ["keine Septime", "kleine Septime", "große Septime"], "intervall");
+        } else {
+            renderOptionButtons("auswahl-intervall", ["kleine Septime", "große Septime"], "intervall");
+        }
     }
 }
 
@@ -169,6 +178,33 @@ function renderOptionButtons(containerId, options, category) {
     });
 }
 
+function renderTextInput(containerId, placeholder, category) {
+    const container = document.getElementById(containerId);
+    if (!container) {
+        return;
+    }
+    container.innerHTML = "";
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.className = "option-input";
+    input.placeholder = placeholder;
+    input.autocomplete = "off";
+    input.addEventListener("input", () => {
+        currentSelection[category] = input.value.trim();
+    });
+
+    container.appendChild(input);
+}
+
+function renderFixedValue(containerId, text) {
+    const container = document.getElementById(containerId);
+    if (!container) {
+        return;
+    }
+    container.innerHTML = `<div class="fixed-value">${text}</div>`;
+}
+
 function selectOption(container, button, category, value) {
     currentSelection[category] = value;
     container.querySelectorAll(".option-button").forEach(btn => {
@@ -186,7 +222,16 @@ function validateAnswer() {
         return;
     }
 
-    if (!currentSelection.type || !currentSelection.umkehrung || (currentHoerbeispiel.intervall && !currentSelection.intervall)) {
+    const requiredFields = ["type", "umkehrung"];
+    if (currentHoerbeispiel.ton) {
+        requiredFields.unshift("ton", "name");
+    }
+    if (currentHoerbeispiel.intervall) {
+        requiredFields.push("intervall");
+    }
+
+    const missing = requiredFields.filter(field => !currentSelection[field]);
+    if (missing.length > 0) {
         const feedback = document.getElementById("feedback");
         if (feedback) {
             feedback.textContent = "Bitte wähle zuerst alle Optionen aus.";
@@ -195,10 +240,22 @@ function validateAnswer() {
         return;
     }
 
-    let richtig = currentSelection.type === currentHoerbeispiel.typ && currentSelection.umkehrung === currentHoerbeispiel.umkehrung;
-    if (currentHoerbeispiel.intervall) {
-        richtig = richtig && currentSelection.intervall === currentHoerbeispiel.intervall;
-    }
+    const fieldMap = {
+        ton: "ton",
+        name: "name",
+        type: "typ",
+        umkehrung: "umkehrung",
+        intervall: "intervall"
+    };
+
+    const richtig = requiredFields.every(field => {
+        const expected = currentHoerbeispiel[fieldMap[field]];
+        const actual = currentSelection[field];
+        if (field === "name") {
+            return expected?.toString().trim().toLowerCase() === actual?.toString().trim().toLowerCase();
+        }
+        return actual === expected;
+    });
 
     showResult(richtig, currentSelection);
 }
@@ -208,18 +265,23 @@ function showResult(richtig, selection) {
     const checkButton = document.getElementById("checkButton");
     const nextButton = document.getElementById("nextButton");
 
-    const expectedAnswers = [
-        `Typ: ${currentHoerbeispiel.typ}`,
-        `Umkehrung: ${currentHoerbeispiel.umkehrung}`
-    ];
+    const expectedAnswers = [];
+    const selectedAnswers = [];
+
+    if (currentHoerbeispiel.ton) {
+        expectedAnswers.push(`Ton: ${currentHoerbeispiel.ton}`);
+        expectedAnswers.push(`Akkordart: ${currentHoerbeispiel.name}`);
+        selectedAnswers.push(`Ton: ${selection.ton || "-"}`);
+        selectedAnswers.push(`Akkordart: ${selection.name || "-"}`);
+    }
+    expectedAnswers.push(`Typ: ${currentHoerbeispiel.typ}`);
+    expectedAnswers.push(`Umkehrung: ${currentHoerbeispiel.umkehrung}`);
     if (currentHoerbeispiel.intervall) {
         expectedAnswers.push(`Intervall: ${currentHoerbeispiel.intervall}`);
     }
 
-    const selectedAnswers = [
-        `Typ: ${selection.type}`,
-        `Umkehrung: ${selection.umkehrung}`
-    ];
+    selectedAnswers.push(`Typ: ${selection.type}`);
+    selectedAnswers.push(`Umkehrung: ${selection.umkehrung}`);
     if (selection.intervall !== null) {
         selectedAnswers.push(`Intervall: ${selection.intervall}`);
     }

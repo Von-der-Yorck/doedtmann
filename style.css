@@ -323,7 +323,8 @@ header h1 {
 }
 
 .result-progress-container {
-    width: calc(100vw - 40px);
+    width: min(90%, 760px);
+    max-width: 760px;
     margin: 0 auto 1rem;
 }
 
@@ -438,6 +439,34 @@ button.secondary {
     margin-bottom: 1rem;
 }
 
+.option-input {
+    width: 100%;
+    max-width: 340px;
+    padding: 0.85rem 1rem;
+    border: 2px solid #d1d5db;
+    border-radius: 12px;
+    background-color: white;
+    color: #1f2937;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.option-input:focus {
+    border-color: #3168ff;
+    box-shadow: 0 0 0 4px rgba(49, 104, 255, 0.12);
+}
+
+.fixed-value {
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #111827;
+    font-weight: 700;
+    min-width: 14rem;
+}
+
 .option-button {
     padding: 0.8rem 1rem;
     border: 2px solid #3168ff;
@@ -458,6 +487,173 @@ button.secondary {
     background-color: #3168ff;
     border-color: #1f4ed6;
     color: white;
+}
+
+.section-card {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.test-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.option-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.option-checkbox,
+.option-radio {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    background-color: #ffffff;
+    cursor: pointer;
+    user-select: none;
+}
+
+.option-checkbox:hover,
+.option-radio:hover {
+    background-color: #f8fafc;
+}
+
+.option-checkbox input,
+.option-radio input {
+    margin: 0;
+}
+
+.option-radio input {
+    accent-color: #3168ff;
+}
+
+.fixed-stop-button {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 1000;
+    padding: 0.85rem 1.25rem;
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
+}
+
+.completion-summary {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: white;
+}
+
+.results-table th,
+.results-table td {
+    padding: 0.85rem 1rem;
+    border: 1px solid #e5e7eb;
+    text-align: left;
+}
+
+.results-table th {
+    background-color: #f8fafc;
+    font-weight: 700;
+}
+
+.bar-group {
+    margin-bottom: 1rem;
+}
+
+.bar-label {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #111827;
+}
+
+.bar-track {
+    display: flex;
+    height: 1.2rem;
+    background-color: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.bar-correct {
+    background-color: #16a34a;
+    min-width: 0;
+}
+
+.bar-wrong {
+    background-color: #dc2626;
+    min-width: 0;
+}
+
+.bar-values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+.results-login,
+.results-user {
+    margin-top: 1rem;
+}
+
+.results-user {
+    font-weight: 700;
+    color: #111827;
+}
+
+.popup-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 800px) {
+    .test-header,
+    .button-row,
+    .popup-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .results-table th,
+    .results-table td {
+        font-size: 0.95rem;
+    }
 }
 
 .popup-overlay {
