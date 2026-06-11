@@ -1,7 +1,8 @@
 const STORAGE_KEY = "hoerbeispieleUserData";
 const DATA_FILES = {
     Akkorde: "hoerbeispiele-akkorde.json",
-    Septakkorde: "hoerbeispiele-septakkorde.json"
+    Septakkorde: "hoerbeispiele-septakkorde.json",
+    "Genaue Akkordbestimmung": "hoerbeispiele-genaueAkkordbestimmung.json"
 };
 const CATEGORY_MAP = {
     Typ: "typ",
@@ -126,6 +127,46 @@ function shuffle(array) {
     return array;
 }
 
+function buildBalancedQuestionPool(examples, totalQuestions) {
+    const groups = examples.reduce((acc, example) => {
+        if (!acc[example.source]) {
+            acc[example.source] = [];
+        }
+        acc[example.source].push(example);
+        return acc;
+    }, {});
+
+    Object.values(groups).forEach(group => shuffle(group));
+
+    const sources = Object.keys(groups);
+    const pool = [];
+    let index = 0;
+
+    while (pool.length < totalQuestions && sources.length > 0) {
+        for (const source of sources) {
+            if (pool.length >= totalQuestions) break;
+            const group = groups[source];
+            if (group.length === 0) continue;
+            pool.push(group[index % group.length]);
+        }
+        index += 1;
+    }
+
+    return shuffle(pool);
+}
+
+function getQuestionFields(example) {
+    switch (example.source) {
+        case "Genaue Akkordbestimmung":
+            return ["Ton", "Akkordart", "Typ", "Umkehrung", "Intervall"];
+        case "Septakkorde":
+            return ["Typ", "Umkehrung", "Intervall"];
+        case "Akkorde":
+        default:
+            return ["Typ", "Umkehrung"];
+    }
+}
+
 function startTest() {
     clearError();
     selectedCategories = ["Typ", "Umkehrung", "Intervall"];
@@ -133,6 +174,7 @@ function startTest() {
     selectedDatasets = [];
     if (document.getElementById("datasetAkkorde").checked) selectedDatasets.push("Akkorde");
     if (document.getElementById("datasetSeptakkorde").checked) selectedDatasets.push("Septakkorde");
+    if (document.getElementById("datasetGenaueAkkordbestimmung").checked) selectedDatasets.push("Genaue Akkordbestimmung");
 
     if (!currentUserName) {
         showError("Bitte melde dich zuerst mit einem Namen an.");
@@ -155,7 +197,8 @@ function startTest() {
     };
     datasetStats = {
         Akkorde: { correct: 0, total: 0 },
-        Septakkorde: { correct: 0, total: 0 }
+        Septakkorde: { correct: 0, total: 0 },
+        "Genaue Akkordbestimmung": { correct: 0, total: 0 }
     };
 
     loadSelectedExamples()
@@ -164,17 +207,7 @@ function startTest() {
                 showError("Für die gewählten Optionen konnten keine Hörbeispiele geladen werden.");
                 return;
             }
-            questionPool = shuffle(examples);
-            // Wenn weniger als gewünscht, wiederhole die Liste
-            if (questionPool.length < totalQuestionsRequested) {
-                const original = [...questionPool];
-                while (questionPool.length < totalQuestionsRequested) {
-                    const needed = totalQuestionsRequested - questionPool.length;
-                    questionPool.push(...original.slice(0, needed));
-                }
-            } else {
-                questionPool = questionPool.slice(0, totalQuestionsRequested);
-            }
+            questionPool = buildBalancedQuestionPool(examples, totalQuestionsRequested);
             totalQuestionsRequested = questionPool.length;
             hideConfigPopup();
             showTestArea();
@@ -183,6 +216,13 @@ function startTest() {
         .catch(() => {
             showError("Beim Laden der Hörbeispiele ist ein Fehler aufgetreten.");
         });
+}
+
+function getUmkehrungOptions(example) {
+    if (example.source === "Genaue Akkordbestimmung") {
+        return ["Grundstellung", "1. Umkehrung", "2. Umkehrung"];
+    }
+    return example.intervall ? CATEGORY_OPTIONS.Umkehrung.withIntervall : CATEGORY_OPTIONS.Umkehrung.withoutIntervall;
 }
 
 function showTestArea() {
@@ -194,9 +234,56 @@ function showTestArea() {
     if (introCard) introCard.hidden = true;
 }
 
+function getIntervallOptions(example) {
+    if (!example.intervall) {
+        return [];
+    }
+    if (example.source === "Genaue Akkordbestimmung") {
+        return ["keine Septime", "kleine Septime", "große Septime"];
+    }
+    return CATEGORY_OPTIONS.Intervall;
+}
+
+function appendFixedValue(container, titleText, valueText) {
+    const group = document.createElement("div");
+    group.className = "section-card";
+    const title = document.createElement("h3");
+    title.textContent = titleText;
+    const value = document.createElement("div");
+    value.className = "fixed-value";
+    value.textContent = valueText;
+    group.appendChild(title);
+    group.appendChild(value);
+    container.appendChild(group);
+}
+
+function appendTextInput(container, titleText, placeholder, category) {
+    const group = document.createElement("div");
+    group.className = "section-card";
+    const title = document.createElement("h3");
+    title.textContent = titleText;
+    const input = document.createElement("input");
+    input.type = "text";
+    input.className = "option-input";
+    input.placeholder = placeholder;
+    input.autocomplete = "off";
+    input.addEventListener("input", () => {
+        currentSelection[category] = input.value.trim();
+    });
+    group.appendChild(title);
+    group.appendChild(input);
+    container.appendChild(group);
+}
+
 function displayQuestion() {
     currentExample = questionPool[currentQuestionIndex];
-    currentSelection = {};
+    currentSelection = {
+        ton: currentExample.source === "Genaue Akkordbestimmung" ? currentExample.ton : "",
+        name: "",
+        typ: "",
+        umkehrung: "",
+        intervall: ""
+    };
     updateQuestionInfo();
     const audioPlayer = document.getElementById("audioPlayer");
     const questionFields = document.getElementById("questionFields");
@@ -209,16 +296,27 @@ function displayQuestion() {
     }
     if (questionFields) {
         questionFields.innerHTML = "";
-        if (selectedCategories.includes("Typ")) {
-            renderOptionGroup(questionFields, "Typ", CATEGORY_OPTIONS.Typ);
-        }
-        if (selectedCategories.includes("Umkehrung")) {
-            const options = currentExample.intervall ? CATEGORY_OPTIONS.Umkehrung.withIntervall : CATEGORY_OPTIONS.Umkehrung.withoutIntervall;
-            renderOptionGroup(questionFields, "Umkehrung", options);
-        }
-        if (selectedCategories.includes("Intervall") && currentExample.intervall) {
-            renderOptionGroup(questionFields, "Intervall", CATEGORY_OPTIONS.Intervall);
-        }
+        getQuestionFields(currentExample).forEach(field => {
+            if (field === "Ton") {
+                appendFixedValue(questionFields, "Ton", `Ton: ${currentExample.ton}`);
+                return;
+            }
+            if (field === "Akkordart") {
+                appendTextInput(questionFields, "Akkordart", "Akkordart eingeben (Groß-/Kleinschreibung egal)", "name");
+                return;
+            }
+            if (field === "Typ") {
+                renderOptionGroup(questionFields, "Typ", CATEGORY_OPTIONS.Typ);
+                return;
+            }
+            if (field === "Umkehrung") {
+                renderOptionGroup(questionFields, "Umkehrung", getUmkehrungOptions(currentExample));
+                return;
+            }
+            if (field === "Intervall" && currentExample.intervall) {
+                renderOptionGroup(questionFields, "Intervall", getIntervallOptions(currentExample));
+            }
+        });
     }
     if (checkButton) {
         checkButton.disabled = false;
@@ -254,7 +352,8 @@ function renderOptionGroup(container, category, options) {
 }
 
 function selectOption(container, button, category, value) {
-    currentSelection[category] = value;
+    const key = category.toLowerCase();
+    currentSelection[key] = value;
     container.querySelectorAll(".option-button").forEach(btn => {
         btn.classList.toggle("selected", btn === button);
     });
@@ -275,11 +374,24 @@ function validateAnswer() {
     const feedback = document.getElementById("feedback");
     if (!currentExample) return;
 
-    const requiredCategories = selectedCategories.filter(category => category !== "Intervall" || currentExample.intervall);
-    const missing = requiredCategories.filter(category => !currentSelection[category]);
+    const fieldMap = {
+        Ton: "ton",
+        Akkordart: "name",
+        Typ: "typ",
+        Umkehrung: "umkehrung",
+        Intervall: "intervall"
+    };
+
+    const requiredFields = getQuestionFields(currentExample).filter(field => field !== "Intervall" || currentExample.intervall);
+    const missing = requiredFields.filter(field => {
+        const key = fieldMap[field];
+        const value = currentSelection[key];
+        return value === undefined || value === null || (typeof value === "string" && value.trim() === "");
+    });
     if (missing.length > 0) {
         if (feedback) {
-            feedback.textContent = `Bitte wähle ${missing.join(", ")} aus.`;
+            const labels = missing.map(field => field === "Akkordart" ? "Akkordart" : field.toLowerCase());
+            feedback.textContent = `Bitte wähle ${labels.join(", ")} aus.`;
             feedback.className = "feedback wrong";
         }
         return;
@@ -287,15 +399,21 @@ function validateAnswer() {
 
     const resultByCategory = {};
     let allCorrect = true;
-    requiredCategories.forEach(category => {
-        const expected = currentExample[CATEGORY_MAP[category]];
-        const answer = currentSelection[category];
-        const correct = expected === answer;
-        resultByCategory[category] = correct;
-        categoryStats[category].total += 1;
-        if (correct) {
-            categoryStats[category].correct += 1;
-        } else {
+    requiredFields.forEach(field => {
+        const key = fieldMap[field];
+        const expected = currentExample[key];
+        const answer = currentSelection[key];
+        const correct = field === "Akkordart"
+            ? expected?.toString().trim().toLowerCase() === answer?.toString().trim().toLowerCase()
+            : expected === answer;
+        resultByCategory[field] = correct;
+        if (categoryStats[field]) {
+            categoryStats[field].total += 1;
+            if (correct) {
+                categoryStats[field].correct += 1;
+            }
+        }
+        if (!correct) {
             allCorrect = false;
         }
     });
@@ -311,12 +429,20 @@ function validateAnswer() {
     answeredQuestions += 1;
 
     if (feedback) {
+        feedback.hidden = false;
         if (allCorrect) {
             feedback.textContent = "Richtig!";
             feedback.className = "feedback correct";
         } else {
-            const expectedValues = requiredCategories.map(category => `${category}: ${currentExample[CATEGORY_MAP[category]]}`);
-            feedback.innerHTML = `<strong>Falsch.</strong> Richtige Antwort: ${expectedValues.join(" · ")}`;
+            const expectedValues = requiredFields.map(field => {
+                const key = fieldMap[field];
+                return `${field}: ${currentExample[key]}`;
+            });
+            const selectedValues = requiredFields.map(field => {
+                const key = fieldMap[field];
+                return `${field}: ${currentSelection[key] || "-"}`;
+            });
+            feedback.innerHTML = `<strong>Falsch.</strong> Richtige Antwort: ${expectedValues.join(" · ")}<br>Deine Antwort: ${selectedValues.join(" · ")}`;
             feedback.className = "feedback wrong";
         }
     }
@@ -358,9 +484,48 @@ function finishTest(aborted) {
     const answered = answeredQuestions;
     const percent = answered === 0 ? 0 : Math.round((correctCount / answered) * 100);
     const headline = aborted ? "Test vorzeitig beendet" : "Test abgeschlossen";
+
+    const tableRows = [
+        { label: "Gesamt", correct: correctCount, wrong: wrongCount, total: answered, percent },
+        ...Object.keys(datasetStats).map(key => {
+            const stats = datasetStats[key];
+            const total = stats.total || 0;
+            const correct = stats.correct || 0;
+            return {
+                label: key,
+                correct,
+                wrong: total - correct,
+                total,
+                percent: total === 0 ? 0 : Math.round((correct / total) * 100)
+            };
+        })
+    ];
+
     summary.innerHTML = `
         <h2>${headline}</h2>
         <p>${correctCount} von ${answered} beantworteten Fragen waren richtig (${percent}%).</p>
+        <div class="results-summary-table-wrapper">
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Abfrageart</th>
+                        <th>Richtig</th>
+                        <th>Falsch</th>
+                        <th>Prozent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${tableRows.map(row => `
+                        <tr>
+                            <td>${row.label}</td>
+                            <td>${row.correct}</td>
+                            <td>${row.wrong}</td>
+                            <td>${row.total === 0 ? "-" : `${row.percent}%`}</td>
+                        </tr>
+                    `).join("")}
+                </tbody>
+            </table>
+        </div>
         <div class="chart-grid" id="resultsChart"></div>
     `;
     summary.hidden = false;

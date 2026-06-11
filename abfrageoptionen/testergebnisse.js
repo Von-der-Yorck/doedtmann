@@ -87,6 +87,7 @@ function renderResults() {
         const overallCell = document.createElement("td");
         const akkordeCell = document.createElement("td");
         const septakkordeCell = document.createElement("td");
+        const genaueCell = document.createElement("td");
 
         const totalQuestions = test.totalQuestionsRequested || 0;
         const totalAnswered = test.answeredQuestions || 0;
@@ -97,8 +98,9 @@ function renderResults() {
         overallCell.textContent = `${overallPercent}%`;
         akkordeCell.textContent = formatCategoryPercent(test.datasetStats?.Akkorde);
         septakkordeCell.textContent = formatCategoryPercent(test.datasetStats?.Septakkorde);
+        genaueCell.textContent = formatCategoryPercent(test.datasetStats?.["Genaue Akkordbestimmung"]);
 
-        row.append(dateCell, countCell, overallCell, akkordeCell, septakkordeCell);
+        row.append(dateCell, countCell, overallCell, akkordeCell, septakkordeCell, genaueCell);
         body.appendChild(row);
     });
 }
